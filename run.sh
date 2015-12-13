@@ -1,6 +1,6 @@
 #!/bin/bash
 
-image=mhiroaki/adata-sf-ssdfwupdater
+image=mhiroaki/adata-sf-ssd-fw-updater
 
 DIR="$(readlink -f "$1")"
 XOPTS=( -e DISPLAY )
@@ -11,4 +11,4 @@ else
 fi
 
 set -x
-docker run --rm "${XOPTS[@]}" -v "$DIR:/work:ro" --privileged $image
+docker run --rm -it "${XOPTS[@]}" -v "$DIR:/work:ro" --privileged $image
